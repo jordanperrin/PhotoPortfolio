@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Film from '../FIlmReel/film.js';
+import Film from '../BWFIlmReelHoriz/film.js';
 
 const App = () => {
 
