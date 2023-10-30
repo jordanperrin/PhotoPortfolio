@@ -1,8 +1,9 @@
 import React from 'react';
 import './film.css';
-import img1 from './images/post1-7.jpg';
+import img1 from '../../images/post1-7.jpg';
 
 let prevVal;
+
 const getRandomNumber = ()=>{
   let newVal =  Math.floor(Math.random() * 16) + 1;
   while(newVal === prevVal ){
@@ -25,7 +26,6 @@ const generatePerfs = () =>{
 }  
 
 const Film = () => {
-
   return (
     <div className="mainFilm">
       <div className="perfs">
