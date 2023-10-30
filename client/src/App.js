@@ -13,7 +13,7 @@ function getRandomNumber(){
 
 const App = () => {
   const squareDivsLeft = [];
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 6; i++) {
     let string = "square" + getRandomNumber();
     squareDivsLeft.push(
       <div id={string} className='sqaure'>
@@ -23,7 +23,7 @@ const App = () => {
   }
 
   const squareDivsRight = [];
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 6; i++) {
     let string = "square" + getRandomNumber();
     squareDivsRight.push(
       <div id={string} className='sqaure'>
@@ -34,10 +34,14 @@ const App = () => {
 
   return (
     <div className="mainFilm">
-      <div className="perfs" id="leftPerf">{squareDivsLeft}</div>
+      <div className="perfs">
+        <div id="leftPerf">
+          {squareDivsLeft}
+        </div>
+      </div>
       <div className="imgContainer">
-        <img src={img1} />
-        <div class="block"></div>
+          <img src={img1} />
+          <div className="block"></div>
       </div>
       <div className="perfs">
         <div id="rightPerf">

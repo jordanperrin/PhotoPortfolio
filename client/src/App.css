@@ -1,9 +1,8 @@
 #square1{
-   
+ 
   background: linear-gradient(black, black) padding-box,
               linear-gradient(20deg, #32322e, #9e9e9c, #eeefec, #272827 ,#333332, #333332) border-box;
               /*we need to apply it to border-box bc we're gonna use the borders to remove the edges of the black padding-box*/
-  border-radius: 10px;
     border-width: 2px 1px 2px 1px;
 }
 
@@ -11,8 +10,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(40deg, #333332, #656563, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 1px 2px 1px 1px;
 }
 
@@ -20,8 +17,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(120deg, #4e4e4b, #656563, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 1px 2px 1px 1px;
 }
 
@@ -29,8 +24,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(39deg, #4e4e4b, #656563, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 1px 2px 1px 1px;
 }
 
@@ -38,8 +31,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(78deg, #4e4e4b, #656563, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 1px 1px 2px 1px;
 }
 
@@ -47,8 +38,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(5deg, #4e4e4b, #444441, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 1px 1px 2px 1px;
 }
 
@@ -56,8 +45,7 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(15deg, #4e4e4b, #444441, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
+
   border-width: 2px 1px 2px 1px;
 }
 
@@ -65,8 +53,6 @@
    
   background: linear-gradient(black, black) padding-box, 
               linear-gradient(203deg, #4e4e4b, #444441, #eeefec,#363735, #272827, #363735 , #e1e1df ) border-box;
-  border-radius: 10px;
-  border: 1px solid transparent;
   border-width: 2px 1px 1px 2px;
 }
 
@@ -74,7 +60,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(210deg, #32322e, #454540, #eeefec, #272827 ,#333332) border-box;
-  border-radius: 10px;
     border-width: 2px 1px 1px 2px;
 }
 
@@ -82,7 +67,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(240deg, #32322e, #767671, #eeefec, #272827 ,#333332, #7f817f, #363735 , #8a8a8a) border-box;
-  border-radius: 10px;
     border-width: 2px 1px 2px 1px;
 }
 
@@ -90,7 +74,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(120deg, #32322e, #767671, #8c8c8c, #272827 ,#333332, #7f817f, #363735 , #acacac) border-box;
-  border-radius: 10px;
     border-width: 2px 1px 2px 1px;
 }
 
@@ -98,7 +81,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(120deg, #32322e, #767671, #272727, #272827 ,#e3e3e1, #313131, #7b7b7b , #343434) border-box;
-  border-radius: 10px;
     border-width: 2px 1px 2px 1px;
 }
 
@@ -106,7 +88,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(20deg, #32322e, #767671, #272727, #272827 ,#e3e3e1, #313131, #7b7b7b , #343434) border-box;
-  border-radius: 10px;
     border-width: 1px 1px 2px 1px;
 }
 
@@ -114,7 +95,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(80deg, #32322e, #424241, #272727, #272827 ,#e3e3e1, #313131, #7b7b7b , #343434) border-box;
-  border-radius: 10px;
     border-width: 1px 1px 2px 1px;
 }
 
@@ -122,7 +102,6 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(60deg, #32322e, #424241, #272727, #272827 ,#e3e3e1, #313131, #7b7b7b , #343434) border-box;
-  border-radius: 10px;
     border-width: 1px 1px 2px 1px;
 }
 
@@ -130,15 +109,15 @@
    
   background: linear-gradient(black, black) padding-box,
               linear-gradient(10deg, #666662, #424241, #272727, #272827 ,#e3e3e1, #313131, #7b7b7b , #343434) border-box;
-  border-radius: 10px;
    border-width: 1px 2px 2px 1px;
 }
 
 .sqaure{
   width:110px;
-  margin-top:20px;
-  height: 85px;
-  border-radius: 10px;
+  margin-top:10px;
+  margin-bottom: 80px;
+  height: 80px;
+  border-radius: 25px;
   border: 1px solid transparent; 
   flex: 1 1 auto;
 }
@@ -147,30 +126,31 @@
   visibility: hidden;
 }
 
-img{
+.imgContainer img{
   border-radius: 7px;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .block {
   width: 100%;
-  height: 100%;
+  height: auto;
+  box-sizing: border-box;
   position: absolute;
   bottom: 0px;
   top: 0px;
   box-shadow: inset 0px 0px 2px 2px rgb(9, 9, 8);
 }
 
-/* rgb(14, 14, 12); */
-
 .imgContainer{
   background-color: rgb(9, 9, 8);
   flex: 1 1 auto;
   margin: auto;
-  width: 80%;
+  width: 100%;
+  height: 100%;
   position: relative;
-  margin: 1rem;
+  margin: 8px;
+  
 }
 
 .perfs{
@@ -185,11 +165,12 @@ img{
 }
 
 #leftPerf{
+  display: flex;
+  flex-direction: column;
   padding-left: 3rem;
 }
 
 .mainFilm{
   display: flex;
-  justify-content: space-between;
   background-color: rgb(9, 9, 8);
 }
