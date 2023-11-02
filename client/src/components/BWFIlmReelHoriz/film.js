@@ -18,7 +18,7 @@ const getRandomNumber = ()=>{
 
 const generatePerfs = () =>{
   const listOfPerfs = [];
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < 28; i++) {
     let string = "square" + getRandomNumber();
     listOfPerfs.push(
       <div id={string} className='sqaure'>
@@ -31,40 +31,50 @@ const generatePerfs = () =>{
 
 const Film = () => {
   return (
-    <div className="mainFilm">
-      <div className="perfs">
-        <div id="leftPerf">
-          {generatePerfs()}
+    <div className="film-container"> 
+      <div className="mainFilm">
+        <div className="perfs">
+          <div id="leftPerf">
+            {generatePerfs()}
+          </div>
+        </div>
+        <div className="imgContainer">
+            <div className="inside-img" id="first-img">
+              <img src={img1} />
+              <div className="block"></div>
+            </div>
+            <div className="inside-img">
+              <img src={img2} />
+              <div className="block"></div>
+            </div>
+            <div className="inside-img">
+              <img src={img3} />
+              <div className="block"></div>
+            </div>
+            <div className="inside-img">
+              <img src={img4} />
+              <div className="block"></div>
+            </div>
+            <div className="inside-img">
+              <img src={img1} />
+              <div className="block" id='messed-up-block'></div>
+            </div>
+            <div className="inside-img">
+              <img src={img1} />
+              <div className="block"></div>
+            </div>
+          <div className="inside-img">
+          </div>
+        </div>
+        <div className="perfs">
+          <div id="rightPerf">
+            {generatePerfs()}
+          </div>
         </div>
       </div>
-      <div className="imgContainer">
-          <div className="inside-img" id="first-img">
-            <img src={img1} />
-            <div className="block"></div>
-          </div>
-          <div className="inside-img">
-            <img src={img2} />
-            <div className="block"></div>
-          </div>
-          <div className="inside-img">
-            <img src={img3} />
-            <div className="block"></div>
-          </div>
-          <div className="inside-img">
-            <img src={img4} />
-            <div className="block"></div>
-          </div>
-          <div className="inside-img">
-            <img src={img5} />
-            <div className="block"></div>
-          </div>
+      <div className="film-burn">
+          
       </div>
-      <div className="perfs">
-        <div id="rightPerf">
-          {generatePerfs()}
-        </div>
-      </div>
-      
     </div>
   );
 };

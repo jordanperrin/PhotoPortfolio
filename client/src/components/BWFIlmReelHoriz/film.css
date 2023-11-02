@@ -143,7 +143,6 @@
 }
 
 .imgContainer{
-  background-color: rgb(9, 9, 8);
   flex: 1 1 auto;
   margin: auto;
   width: 100%;
@@ -152,17 +151,13 @@
   margin: 0px;
 }
 
-/* .perfs{
-  
-} */
-
 .inside-img{
   position: relative;
   margin-top: 10px;
 }
 
 #first-img{
-  margin: 3px;
+  margin-top: 7px;
 }
 
 #rightPerf{
@@ -180,5 +175,44 @@
 
 .mainFilm{
   display: flex;
-  background-color: rgb(9, 9, 8);
 }
+
+/* body{
+  background-color: rgb(9, 9, 8);
+} */
+
+#messed-up-block{
+    height: 24vh;
+}
+
+.film-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.film-burn{
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  background-color:white;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background:  rgb(9,9,8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
