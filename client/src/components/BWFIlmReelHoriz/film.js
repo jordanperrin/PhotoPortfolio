@@ -18,7 +18,7 @@ const getRandomNumber = ()=>{
 
 const generatePerfs = () =>{
   const listOfPerfs = [];
-  for (let i = 0; i < 28; i++) {
+  for (let i = 0; i < 26; i++) {
     let string = "square" + getRandomNumber();
     listOfPerfs.push(
       <div id={string} className='sqaure'>
@@ -72,9 +72,17 @@ const Film = () => {
           </div>
         </div>
       </div>
-      <div className="film-burn">
-          
-      </div>
+        <div className="film-burn">
+        </div>
+      <svg >
+        <filter id="wavy">
+          <feTurbulence x="0" y="0" baseFrequency="0.109" numOctaves="5" seed="2">
+            <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" scale="40" />
+        </filter>
+      </svg> 
+      <div className='white-fill'></div>
     </div>
   );
 };
