@@ -191,6 +191,10 @@
   height: 100%;
 }
 
+svg{
+  display: none;
+}
+
 .film-burn{
   display: flex;
   position: relative;
@@ -199,22 +203,72 @@
   filter: url(#wavy) blur(1px);
 }
 
-svg{
-  display: none;
-}
-
-.film-burn::before{
-  content: "";
-  position: absolute;
-  top: 3vmin;
+.actual-burn{
+  padding-top: 4vmin;
   left: -57vmin;
   right: -54vmin;
   bottom: 46vmin;
   border: 30vmin solid hsl(0, 0%, 100%);
-  border-radius: 50%;
   box-shadow: 0 0 5vmin hsl(40, 100%, 99%), inset 0 0 5vmin hsl(0, 0%, 91%);
+  filter: url(#wavy) blur(1px);
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
+.burn-container{
+  position:static;
+  height: 100%;
+  width: 100%;
+}
+
+.hidden{
+  opacity: 0; 
+}
+
+.show-burn{
+  opacity: 1;
+  transition: all 800ms;
+}
+
+.animateBurn{
+  animation-duration: 3s;
+  animation-name: animate-burn;
+}
+
+@keyframes animate-burn{
+  0%{
+    height:87vh;
+    width: 10000000vw;
+  }
+  5%{
+    height: 70vh;
+    width: 10000000vw;
+  }
+  10%{
+    width: 10000000vw;
+  }
+  15%{
+    width: 10000000vw;
+  }
+  20%{
+    width: 10000000vw;
+  }
+  25%{
+    width: 10000000vw;
+  }
+  30%{
+    width: 10000000vw;
+  }
+  100%{
+    width: 10000000vw;
+  }
+}
+
+.show-fill{
+  opacity: 1;
+  transition: all 7500ms;
+}
 
 .white-fill{
   position: absolute;

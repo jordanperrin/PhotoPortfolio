@@ -1,4 +1,5 @@
 import React from 'react';
+import {useRef, useEffect, useState } from 'react';
 import './film.css';
 import img1 from '../../images/post1-7.jpg';
 import img2 from '../../images/post1-4.jpg';
@@ -7,7 +8,6 @@ import img4 from '../../images/post2-8.jpg';
 import img5 from '../../images/post2-10.jpg';
 
 let prevVal;
-
 const getRandomNumber = ()=>{
   let newVal =  Math.floor(Math.random() * 16) + 1;
   while(newVal === prevVal ){
@@ -15,7 +15,6 @@ const getRandomNumber = ()=>{
   }
   return newVal;
 }
-
 const generatePerfs = () =>{
   const listOfPerfs = [];
   for (let i = 0; i < 26; i++) {
@@ -30,6 +29,22 @@ const generatePerfs = () =>{
 }  
 
 const Film = () => {
+  const myRef = useRef();
+  const [myElementIsVisible, setmyElementIsVisible] = useState();
+  console.log('myElementIsVisible', myElementIsVisible)
+
+  useEffect(() =>{
+    // console.log('myRef', myRef.current);
+     const observer = new IntersectionObserver((entries)=>{
+       const entry = entries[0];
+       setmyElementIsVisible(entry.isIntersecting)
+      //  console.log("entry", entry);
+     })
+
+     observer.observe(myRef.current )
+  }, [])
+
+  //empty array as a dependency 
   return (
     <div className="film-container"> 
       <div className="mainFilm">
@@ -72,8 +87,13 @@ const Film = () => {
           </div>
         </div>
       </div>
-        <div className="film-burn">
-        </div>
+
+      <div className="burn-container">
+       <div ref={myRef} className={`film-burn ${myElementIsVisible ? 'show-burn' : 'hidden'}`}></div>
+       <div className="actual-burn"></div>
+      </div>
+
+
       <svg >
         <filter id="wavy">
           <feTurbulence x="0" y="0" baseFrequency="0.109" numOctaves="5" seed="2">
@@ -82,7 +102,6 @@ const Film = () => {
           <feDisplacementMap in="SourceGraphic" scale="40" />
         </filter>
       </svg> 
-      <div className='white-fill'></div>
     </div>
   );
 };
