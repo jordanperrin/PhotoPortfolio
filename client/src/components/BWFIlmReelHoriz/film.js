@@ -88,10 +88,9 @@ const Film = () => {
         </div>
       </div>
 
-      <div className="burn-container">
        <div ref={myRef} className={`film-burn ${myElementIsVisible ? 'show-burn' : 'hidden'}`}></div>
        <div className="actual-burn"></div>
-      </div>
+      
 
 
       <svg >

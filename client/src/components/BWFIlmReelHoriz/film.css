@@ -203,17 +203,16 @@ svg{
   filter: url(#wavy) blur(1px);
 }
 
-.actual-burn{
-  padding-top: 4vmin;
+.film-burn::after{
+  content: "";
+  top: 12vmin;
   left: -57vmin;
   right: -54vmin;
   bottom: 46vmin;
   border: 30vmin solid hsl(0, 0%, 100%);
   box-shadow: 0 0 5vmin hsl(40, 100%, 99%), inset 0 0 5vmin hsl(0, 0%, 91%);
   filter: url(#wavy) blur(1px);
-  height: 100%;
-  width: 100%;
-  position: relative;
+  position: absolute;
 }
 
 .burn-container{
