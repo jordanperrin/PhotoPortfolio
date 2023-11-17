@@ -15,6 +15,7 @@ const getRandomNumber = ()=>{
   }
   return newVal;
 }
+
 const generatePerfs = () =>{
   const listOfPerfs = [];
   for (let i = 0; i < 26; i++) {
@@ -31,16 +32,14 @@ const generatePerfs = () =>{
 const Film = () => {
   const myRef = useRef();
   const [myElementIsVisible, setmyElementIsVisible] = useState();
-  console.log('myElementIsVisible', myElementIsVisible)
 
   useEffect(() =>{
-    // console.log('myRef', myRef.current);
-     const observer = new IntersectionObserver((entries)=>{
-       const entry = entries[0];
-       setmyElementIsVisible(entry.isIntersecting)
-      //  console.log("entry", entry);
-     })
-
+     const observer = new IntersectionObserver((entries)=>{ //callback function that is going to be fired every time visibility of that observed element
+        const entry = entries[0];
+        setmyElementIsVisible(entry.isIntersecting); //uses the useState() hook
+        //  console.log("entry", entry);
+      });
+ 
      observer.observe(myRef.current )
   }, [])
 
@@ -88,9 +87,10 @@ const Film = () => {
         </div>
       </div>
 
-       <div ref={myRef} className={`film-burn ${myElementIsVisible ? 'show-burn' : 'hidden'}`}></div>
-       <div className="actual-burn"></div>
-      
+      <div className = "burn-container">
+        <div ref={myRef} className={` ${myElementIsVisible ? 'film-burn' : "off-screen"}`}></div>
+        {/* <div className="actual-burn"></div> */}
+      </div>
 
 
       <svg >
