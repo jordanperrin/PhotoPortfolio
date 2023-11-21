@@ -39,9 +39,9 @@ nav ul li a{
     border-radius: 0.5rem;
 }
 
-nav ul li a:not(.active):hover{
+/* nav ul li a:not(.active):hover{
     background-color: grey;
-}
+} */
 
 nav .menu{
     display:flex;
@@ -83,7 +83,7 @@ nav .side-menu{
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
 }
 
@@ -91,12 +91,11 @@ nav .side-menu{
     background-color: rgb(9,9,8);
     width: 75px;
     height: 18vh;
-    display: flex;
-    justify-content: center;
+    display:block;
     position: fixed;
     top: -100%;
     right:0;
-    transition: 850ms;
+    transition: 750ms ease-in-out;
     z-index: 999;
     border-bottom-left-radius: 0.7rem;
 }
@@ -104,5 +103,21 @@ nav .side-menu{
 .side.active{
     top:5.5vh;
     right:0;
-    transition: 350ms;
+    transition: 350ms ease-in-out;
+}
+
+.orienatation-icon{
+    display: flex;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+    color: white;
+    margin-right: 0.8rem;
+}
+
+.orienatation-icon:active{
+    background-color:white;
+    color:black;
 }

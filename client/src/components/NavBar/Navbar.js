@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import {SidebarData} from './SidebarData';
-import { MdOutlineCropLandscape } from "react-icons/md";
+import { MdOutlineCropLandscape as Landscape, MdOutlineCropPortrait as Portarit} from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import {Link, NavLink} from 'react-router-dom'
@@ -23,12 +23,14 @@ const Navbar = () =>{
                 
                 <ul>
                     <li>
-                        <NavLink to="#">
-                            Vert
-                        </NavLink>
+                        <Link to="/vert">
+                            <Landscape className='orienatation-icon'/>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink to="#">Horiz</NavLink>
+                        <Link to="/horiz">
+                            <Portarit className='orienatation-icon'/>
+                        </Link>
                     </li>
                 </ul>
                 
@@ -44,12 +46,12 @@ const Navbar = () =>{
             <nav className=  {sidebar ?  'side active': 'side'}>
                 <ul className='side-items'>    
                     <li className='sidebar-toggle'>
-                        <NavLink to="#">
+                        <NavLink to="/bw" onClick={showSidebar} >
                             BW
                         </NavLink>
                     </li>
                     <li className='sidebar-toggle'>
-                        <NavLink to='#'>
+                        <NavLink to='/color' onClick={showSidebar}  >
                             Color
                         </NavLink>
                     </li>
