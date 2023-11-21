@@ -1,42 +1,108 @@
-*{
-    box-sizing: border-box;
-}
-
-body{
-    margin: 0;
+.active{
+    background-color:white;
+    color:black;
 }
 
 .nav{
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 0 1rem ;
+    background-color: rgb(9,9,8);
+    position: sticky;
+    top: 0;
+    z-index:9999;
 }
 
-.nav ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.nav li a{
-    color: inherit;
-    font-weight: 100;
-}
-
-.nav li a:hover{
-    color:  #7b7b7b ;
-}
-
-.nav a{
-    color: inherit;
+nav .title{
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
     text-decoration: none;
+    color: white;
 }
 
-.site-title{
-    font-size: 1rem;
+nav ul{
+    display: flex;
+    padding-right: 0.3rem;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+nav ul li a:not(.active):hover{
+    background-color: grey;
+}
+
+nav .menu{
+    display:flex;
+    right:0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+    color: white;
+    margin-right: 0.8rem;
+}
+
+nav .x{
+    display:flex;
+    right:0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+    color: white;
+    margin-right: 0.8rem;
+}
+
+nav .menu-container{
+    display: block;
+}
+
+nav .side-menu{
+    display: block;
+
+}
+
+.side-items{
+    width: 100%;
+    display: block;
+}
+
+.sidebar-toggle{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.side{
+    background-color: rgb(9,9,8);
+    width: 75px;
+    height: 18vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: -100%;
+    right:0;
+    transition: 850ms;
+    z-index: 999;
+    border-bottom-left-radius: 0.7rem;
+}
+
+.side.active{
+    top:5.5vh;
+    right:0;
+    transition: 350ms;
 }
