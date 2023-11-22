@@ -4,7 +4,7 @@ import {SidebarData} from './SidebarData';
 import { MdOutlineCropLandscape as Landscape, MdOutlineCropPortrait as Portarit} from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () =>{

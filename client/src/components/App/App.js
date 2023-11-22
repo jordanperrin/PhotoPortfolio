@@ -14,7 +14,9 @@ const App = () => {
           {/* <Route path="" /> */}
         </Routes>
       </Router>
+      <Router>
        <Film />
+      </Router>
     </>
   );
 };

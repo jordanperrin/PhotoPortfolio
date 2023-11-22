@@ -211,7 +211,7 @@ svg{
   left: -57vmin;
   right: -54vmin;
   bottom: 46vmin;
-  border: 12vmin solid hsl(0, 0%, 100%);
+  border: 16vmin solid hsl(0, 0%, 100%);
   box-shadow: 0 0 5vmin hsl(40, 100%, 99%), inset 0 0 5vmin hsl(0, 0%, 91%);
   /* filter: url(#wavy) blur(1px); */
   position: absolute;
@@ -220,7 +220,6 @@ svg{
 
 .off-screen{
   background-color: rgb(9,9,8);
-  /* top: 600px; */
   height: 800px;
 }
 
@@ -282,4 +281,31 @@ html {
   width: 100%;
 }
 
+.ig-container{
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  top: 4vh;
+}
 
+.ig-icon{
+  display: flex;
+  width: 18vw;
+  height: 4vh;
+  color: rgb(9,9,8);
+  /* opacity: 0;
+  transition: opacity 2s ease-in-out;  */
+}
+
+.fade-in-element.show {
+  opacity: 1;
+}
+
+.burn-container ul{
+  display:flex;
+  list-style: none;
+}

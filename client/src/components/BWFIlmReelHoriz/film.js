@@ -1,5 +1,8 @@
 import React from 'react';
 import {useRef, useEffect, useState } from 'react';
+import { LuInstagram as IgIcon} from "react-icons/lu";
+import { LuMail } from "react-icons/lu";
+import {Link} from 'react-router-dom';
 import './film.css';
 import img1 from '../../images/post1-7.jpg';
 import img2 from '../../images/post1-4.jpg';
@@ -89,7 +92,20 @@ const Film = () => {
 
       <div className = "burn-container">
         <div ref={myRef} className={` ${myElementIsVisible ? 'film-burn' : "off-screen"}`}></div>
-        {/* <div className="actual-burn"></div> */}
+        <div className='ig-container'>
+          <ul className='contact-list'>
+            <li>
+              <Link to='https://www.instagram.com/cinema.tif/'>
+                <IgIcon className='ig-icon'/>
+              </Link>
+            </li>
+            <li>
+              <Link to='/contact'>
+                <LuMail className='ig-icon'/>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
 
