@@ -78,7 +78,9 @@ nav .side-menu{
 
 .side-items{
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar-toggle{
@@ -89,23 +91,38 @@ nav .side-menu{
     align-items: center;
 }
 
-.side{
-    background-color: #fff;
-    width: 75px;
-    height: 18vh;
-    display:block;
-    position: fixed;
-    top: -100%;
-    right:0;
-    transition: 750ms ease-in-out;
+/* why doesnt opacity transiton be applied */
+.side {
+    background-color: #ffffff00;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    top:-100%;
+    transition: top 2s ease-in-out;
     z-index: 999;
     border-bottom-left-radius: 0.7rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    
 }
 
 .side.active{
-    top:4.5vh;
-    right:0;
-    transition: 350ms ease-in-out;
+    top:6.5vh;
+    transition: top 2s ease-in-out;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+.drop-item{
+    padding: 0.9rem;
+    font-size: 2.2vh;
+    font-weight: bold;
 }
 
 .orienatation-icon{
@@ -142,4 +159,18 @@ nav .side-menu{
     box-shadow: 0 0 3vmin hsl(0, 0%, 100%), inset 0 0 9vmin hsl(0, 0%, 100%);
     filter: url(#wavy-nav) blur(1px);
     position: relative;
+    transition: 1s ease-in-out;
+}
+
+.film-burn-nav.show::after {
+    content: "";
+    top: -38vmin;
+    left: -20vmin;
+    right: -54vmin;
+    bottom: 110vmin;
+    border: 61vmin solid hsl(0, 0%, 100%);
+    box-shadow: 0 0 3vmin hsl(0, 0%, 100%), inset 0 0 9vmin hsl(0, 0%, 100%);
+    filter: url(#wavy-nav) blur(1px);
+    position: relative;
+    transition: 1s ease-in-out;
 }

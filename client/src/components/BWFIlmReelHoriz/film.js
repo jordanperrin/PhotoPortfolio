@@ -21,42 +21,78 @@ const getRandomNumber = ()=>{
   return newVal;
 }
 
-//TODO: need to use Hooks for this
-const generatePerfs = () =>{
-  const listOfPerfs = [];
-  for (let i = 0; i < 26; i++) {
-    let string = "square" + getRandomNumber();
-    listOfPerfs.push(
-      <div id={string} className='sqaure'>
-        <span className="invisible"> Placeholder</span>
-      </div>
-    );
-  }
-   return listOfPerfs;
-}  
-
 const Film = () => {
   const burnRef = useRef();
-  const [burnDivVisible, setburnDivVisible] = useState();
+  const [leftPerfs, setleftPerfs] = useState([]);
+  const [rightPerfs, setRightPerfs] = useState([]);
+  const [burnDivVisible, setburnDivVisible] = useState(false);
   const [btmIconsVisible, setbtmIconsVisible] = useState();
 
-  useEffect(() =>{
-     const observer = new IntersectionObserver((entries)=>{ //callback function that is going to be fired every time visibility of that observed element
-        const entry = entries[0];
-        setburnDivVisible(entry.isIntersecting); //uses the useState() hook
-        //  console.log("entry", entry);
-      });
- 
-     observer.observe(burnRef.current )
-  }, [])//empty array as a dependency will only run once when component is initialized
+  useEffect(()=>{
+    if(leftPerfs.length ===0){
+      const listOfPerfs=[];
+      for (let i = 0; i < 26; i++) {
+        let string = "square" + getRandomNumber();
+        listOfPerfs.push(
+          <div id={string} className='sqaure'>
+            <span className="invisible"> Placeholder</span>
+          </div>
+        );
+      }
+      setleftPerfs(listOfPerfs);
+    }
 
+    if(rightPerfs.length ===0){
+      const listOfPerfs=[];
+      for (let i = 0; i < 26; i++) {
+        let string = "square" + getRandomNumber();
+        listOfPerfs.push(
+          <div id={string} className='sqaure'>
+            <span className="invisible"> Placeholder</span>
+          </div>
+        );
+      }
+      setRightPerfs(listOfPerfs);
+    }
+    
+  }, [leftPerfs, rightPerfs])
+
+  //observe when user scrolls over film burn div 
+  useEffect(() =>{
+    //set a timeout of 9s for Observer to start observing so when film-container drops in we dont see film-burn div drop down
+    const delayTimeout = setTimeout(() =>{
+      const observer = new IntersectionObserver((entries)=>{ //callback function that is going to be fired every time visibility of that observed element
+         const entry = entries[0];
+         setburnDivVisible(entry.isIntersecting); //uses the useState() hook
+         //  console.log("entry", entry);
+       });
+  
+      observer.observe(burnRef.current)
+      //clean-up 
+      return () => {
+       observer.disconnect();
+      };
+
+    },9000);
+
+    return () => clearTimeout(delayTimeout);
+  }, []);//empty array as a dependency will only run once when component is initialized
+
+  //dleay the rendering of film-burn div
+  useEffect(()=> {
+    const delayTimeout = setTimeout(()=>{
+      setburnDivVisible(true);
+    },13000);
+
+    return () => clearTimeout(delayTimeout); 
+  }, []);
   
   return (
     <div className="film-container"> 
       <div className="mainFilm">
-        <div className="perfs">
+        <div className="leftPerfs">
           <div id="leftPerf">
-            {generatePerfs()}
+            {leftPerfs.length > 0 && leftPerfs}
           </div>
         </div>
         <div className="imgContainer">
@@ -87,9 +123,9 @@ const Film = () => {
           <div className="inside-img">
           </div>
         </div>
-        <div className="perfs">
+        <div className="leftPerfs">
           <div id="rightPerf">
-            {generatePerfs()}
+            {rightPerfs.length > 0 && rightPerfs}
           </div>
         </div>
       </div>

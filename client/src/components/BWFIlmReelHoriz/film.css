@@ -185,6 +185,18 @@
   position: relative;
   width: 100%;
   height: 100%;
+  animation: slide-in-from-top 8s ease-in-out;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    opacity:0;
+    top:-200vh;
+  }
+  100% {
+    opacity:1;
+    top: 0;
+  }
 }
 
 svg{
@@ -198,6 +210,7 @@ svg{
   width: 100%;
   filter: url(#wavy) blur(1px);
 }
+
 
 .burn-container{
   height: 100%;
@@ -218,10 +231,10 @@ svg{
   animation: slideinbottom 1.5s ;
 }
 
-/* .off-screen{
+.off-screen{
   background-color: rgb(9,9,8);
   height: 10vh;
-} */
+}
 
 @keyframes slideinbottom {
   0% {
@@ -289,7 +302,7 @@ html {
   align-items: center;
   position: relative;
   z-index: 2;
-  top: 2vh;
+  top: 3vh;
   opacity:0;
   transition: opacity 6s ease-in-out; 
 }

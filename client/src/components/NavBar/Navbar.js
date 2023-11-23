@@ -9,10 +9,10 @@ import './Navbar.css';
 
 const Navbar = () =>{
     
-    const [sidebar, setsidebar]= useState(false);
+    const [dropDown, setdropDown]= useState(false);
 
-    const showSidebar = () =>{
-        setsidebar(!sidebar);
+    const showDropDown = () =>{
+        setdropDown(!dropDown);
     }
 
     //.active class in css will e applied to any active link using NavLink tag
@@ -35,14 +35,29 @@ const Navbar = () =>{
                 </ul>
                 
                 <div className='menu-container' >
-                    {!sidebar ? (
-                            <GiHamburgerMenu className='menu' onClick={showSidebar} />
+                    {!dropDown ? (
+                            <GiHamburgerMenu className='menu' onClick={showDropDown} />
                         ) : (
-                            <IoMdClose className='x' onClick={showSidebar} />
+                            <IoMdClose className='x' onClick={showDropDown} />
                         )}
                 </div>
 
-                <div className='film-burn-nav'></div>
+                <div className=  {dropDown ?  'side active': 'side'}>
+                    <ul className='side-items'>    
+                        <li className='dropDown-toggle'>
+                            <Link to="/bw" className='drop-item' onClick={showDropDown} >
+                                BW
+                            </Link>
+                        </li>
+                        <li className='dropDown-toggle'>
+                            <Link to='/color' className='drop-item' onClick={showDropDown}  >
+                                Color
+                            </Link>
+                        </li>
+                    </ul>     
+                </div>
+
+                <div className={dropDown ? 'film-burn-nav show' : "film-burn-nav"}></div>
 
                 <svg >
                     <filter id="wavy-nav">
@@ -54,20 +69,7 @@ const Navbar = () =>{
                  </svg> 
             </nav>
 
-            <nav className=  {sidebar ?  'side active': 'side'}>
-                <ul className='side-items'>    
-                    <li className='sidebar-toggle'>
-                        <NavLink to="/bw" onClick={showSidebar} >
-                            BW
-                        </NavLink>
-                    </li>
-                    <li className='sidebar-toggle'>
-                        <NavLink to='/color' onClick={showSidebar}  >
-                            Color
-                        </NavLink>
-                    </li>
-                </ul>     
-            </nav>
+           
         </>
     );
 };
