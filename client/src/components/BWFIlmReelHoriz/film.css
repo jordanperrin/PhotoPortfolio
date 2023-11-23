@@ -211,7 +211,7 @@ svg{
   left: -57vmin;
   right: -54vmin;
   bottom: 46vmin;
-  border: 10vmin solid hsl(0, 0%, 100%);
+  border: 13vmin solid hsl(0, 0%, 100%);
   box-shadow: 0 0 5vmin hsl(40, 100%, 99%), inset 0 0 5vmin hsl(0, 0%, 91%);
   /* filter: url(#wavy) blur(1px); */
   position: absolute;
@@ -289,7 +289,7 @@ html {
   align-items: center;
   position: relative;
   z-index: 2;
-  top: 3vh;
+  top: 2vh;
   opacity:0;
   transition: opacity 6s ease-in-out; 
 }
