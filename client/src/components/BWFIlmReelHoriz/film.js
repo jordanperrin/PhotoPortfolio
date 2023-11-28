@@ -59,7 +59,7 @@ const Film = () => {
 
   //observe when user scrolls over film burn div 
   useEffect(() =>{
-    //set a timeout of 9s for Observer to start observing so when film-container drops in we dont see film-burn div drop down
+    //set a timeout of 4s for Observer to start observing so when film-container drops in we dont see film-burn div drop down
     const delayTimeout = setTimeout(() =>{
       const observer = new IntersectionObserver((entries)=>{ //callback function that is going to be fired every time visibility of that observed element
          const entry = entries[0];
@@ -73,19 +73,10 @@ const Film = () => {
        observer.disconnect();
       };
 
-    },9000);
+    },4000);
 
     return () => clearTimeout(delayTimeout);
   }, []);//empty array as a dependency will only run once when component is initialized
-
-  //dleay the rendering of film-burn div
-  useEffect(()=> {
-    const delayTimeout = setTimeout(()=>{
-      setburnDivVisible(true);
-    },13000);
-
-    return () => clearTimeout(delayTimeout); 
-  }, []);
   
   return (
     <div className="film-container"> 
